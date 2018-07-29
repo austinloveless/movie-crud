@@ -1,0 +1,48 @@
+<% include ./partials/header   %>
+
+
+<div class="ui main text container">
+    <div class = "ui huge header">Movie List</div>
+        <div class = "ui top attached segment">
+            <div class = "ui divided items">
+                    <% movies.forEach(movie =>{ %>
+                        <div class="item">
+                            <div class="image">
+                              <h4>Poster:</h4>
+                                <img src="<%= movie.poster %>" alt="">
+                                <div class="meta">
+                                  <h4>Year:</h4>
+                                    <span><%= movie.year %></span>
+                                </div>
+                            </div>
+                            <div class="content">
+                              <h4>Title:</h4>
+
+                                <a class="header" href="#"><%=movie.title%>
+                                </a>
+
+                                <div class="description">
+                                  <h4>Director:</h4>
+
+                                    <p><%=movie.director%></p>
+                                </div>
+                                <div class="description">
+                                  <h4>Rating:</h4>
+
+                                    <p><%=movie.rating%></p>
+                                </div>
+                                <a href="/movies/<%=movie._id%>">View Movie</a>
+                            </div>
+                            <a class="ui orange inverted button" href="/movies/<%=movie._id%>/edit">Edit</a>
+
+                           <form id="delete" action="/movies/<%=movie._id%>?_method=DELETE" method="post">
+                              <button class="ui red inverted button">Delete</button>
+                            </form>
+
+                        </div>
+                      <% }) %>
+            </div>
+        </div>
+</div>
+
+  <% include ./partials/footer   %>

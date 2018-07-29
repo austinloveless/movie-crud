@@ -1,0 +1,30 @@
+<% include ./partials/header %>
+
+<div class="ui main text container segment">
+    <div class="ui huge header"> New Movie</div>
+    <form class="ui form" action="/movies" method="post">
+      <div class="field">
+        <label>Title</label>
+        <input type="text" name="movie[title]" placeholder="Title" required>
+      </div>
+      <div class="field">
+        <label>Image</label>
+        <input  type="text" name="movie[poster]" placeholder="Poster Url">
+      </div>
+      <div class="field">
+        <label>Director</label>
+        <input  type="text" name="movie[director]" placeholder="Director">
+      </div>
+      <div class="field">
+        <label>Rating</label>
+        <input  type="text" name="movie[rating]" placeholder="Rating">
+      </div>
+      <div class="field">
+        <label>Year</label>
+        <input  type="text" name="movie[year]" placeholder="Year">
+      </div>
+      <input class="ui violet big inverted button" type="submit">
+    </form>
+</div>
+
+<% include ./partials/footer %>
